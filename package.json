@@ -1,0 +1,38 @@
+{
+	"name": "profootball",
+	"version": "1.0.0",
+	"description": "demo",
+	"main": "index.js",
+	"author": "Шангареев Руслан",
+	"license": "ISC",
+	"type": "commonjs",
+	"scripts": {
+		"deploy": "gulp build && gh-pages -d dist"
+	},
+	"browserslist": [
+		"last 2 versions",
+		"> 1%",
+		"IE 10"
+	],
+	"devDependencies": {
+		"autoprefixer": "^10.4.20",
+		"browser-sync": "^2.27.7",
+		"del": "^6.1.1",
+		"gh-pages": "^6.3.0",
+		"gulp": "^4.0.2",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-dart-sass": "^1.1.0",
+		"gulp-gh-pages": "^0.5.4",
+		"gulp-imagemin": "^9.1.0",
+		"gulp-postcss": "^10.0.0",
+		"gulp-pug": "^5.0.0",
+		"gulp-uglify": "^3.0.2",
+		"gulp-uglify-es": "^3.0.0",
+		"gulp-webp": "^5.0.0"
+	},
+	"dependencies": {
+		"gulp-cli": "^3.0.0",
+		"imagemin-webp": "^8.0.0"
+	}
+}
