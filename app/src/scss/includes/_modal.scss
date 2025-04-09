@@ -1,0 +1,162 @@
+.fancybox__container{
+  --fancybox-bg: rgba(10, 10, 13, 0.5) !important;
+  --fancybox-color:var(--colorWhite)!important;
+}
+.modal{
+  display: none;
+  height: fit-content;
+  &.fancybox__content{
+    max-width: 540px;
+    border: 1px solid rgba(69, 69, 71, 1);
+    border-radius: 40px;
+    background: var(--colorBlack);
+    padding: 50px 55px;
+    color: var(--colorWhite);
+
+  }
+ .f-button.is-close-btn{
+    top: 25px !important;
+    right: 25px !important;
+    width: 20px;
+    height: 20px;
+    opacity: 0.55;
+    --f-button-color: var(--colorWhite) !important;
+  }
+  &__title{
+    font-family: var(--secondFonts);
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 55px;
+    text-transform: uppercase;
+  }
+  &__text{
+    margin-top: 15px;
+    font-size: 17px;
+    line-height: 25px;
+  }
+  &__form{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    P{
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 20px;
+      color: rgba(255, 255, 255, 0.4);
+      a{
+        color: inherit;
+        position: relative;
+        transition: color linear var(--transitionDuration);
+        display: inline-block;
+        &::after{
+          content: '';
+          position: absolute;
+          bottom: 1px;
+          width: 100%;
+          background: rgba(255, 255, 255, 0.4);
+          height: 1px;
+          display: block;
+          transition: background linear var(--transitionDuration);
+        }
+      }
+    }
+  }
+  &__input{
+    position: relative;
+    width: 100%;
+    input{
+      width: 100%;
+      background: none;
+      border: none;
+      border-bottom: 1px solid rgba(69, 69, 71, 1);
+      outline: none;
+      padding: 0;
+      margin: 0;
+      color: var(--colorWhite);
+      font-size: 17px;
+      line-height: 25px;
+      font-family: var(--firstFonts);
+      padding: 10px 0 20px;
+      &::placeholder{
+        color: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        font-family: inherit;
+      }
+    }
+    .input-error{
+      position: absolute;
+      background:rgba(238, 99, 82, 1);
+      color: var(--colorWhite);
+      padding: 2px 4px;
+      font-size: 12px;
+      font-family: var(--firstFonts);
+      font-weight: 400;
+      font-size: 12px;
+      left: 0;
+      bottom: 0;
+      -webkit-transform: translateY(50%);
+      transform: translateY(50%);
+    }
+  }
+  &__btn{
+    margin-top: 20px;
+    background: var(--colorGreen);
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background linear var(--transitionDuration);
+  }
+  @media(hover:hover){
+    &__form{
+      a:hover{
+        color: var(--colorGreen);
+        &::after{
+          background: var(--colorGreen);
+        }
+      }
+    }
+    &__btn:hover{
+      background: rgba(187, 225, 26, 1);
+    }
+  }
+  @media(max-width:800px) or (max-height:800px){
+    &.fancybox__content{
+      border-radius: 20px;
+      padding: 25px;
+    }
+    &__title{
+      font-size: 32px;
+      line-height: 35px;
+    }
+    &__text{
+      margin-top: 15px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    &__form{
+      margin-top: 25px;
+      gap: 15px;
+      input{
+        padding: 5px 0 10px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+      p{
+        font-size: 12px;
+        line-height: 20px;
+      }
+    }
+    &__btn{
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .f-button.is-close-btn{
+      width: 16px;
+      height: 16px;
+      top: 20px !important;
+      right: 20px !important;
+    }
+  }
+}

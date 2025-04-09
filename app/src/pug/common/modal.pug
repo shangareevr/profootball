@@ -1,0 +1,16 @@
+.modal#callme
+  .modal__wrapper 
+    h3.modal__title заказать<br>звонок
+    p.modal__text Оставьте заявку и наш специалист перезвонит в ближайшее время для консультации
+    form.modal__form(action="")
+      .modal__input 
+        input(type="text" name="name" placeholder="Ваше имя")
+        span(class="input-error name-error" style="display:none") Пожалуйста, заполните это поле
+      .modal__input
+        input(type="text" name="phone" placeholder="+7 (999) 999-99-99") 
+        span(class="input-error phone-error" style="display:none") Пожалуйста, заполните это поле
+      .modal__input  
+        input(type="email" name="email" placeholder="E-mail")
+      button(type="submit").modal__btn.btn Оставить заявку
+      p Нажимая кноку «Оставить заявку», вы соглашаетесь с 
+        a(href="") политикой конфиденциальности 

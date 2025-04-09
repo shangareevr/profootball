@@ -60,5 +60,24 @@
 		<script src="assets/js/fancybox/fancybox.umd.js" defer></script>
 		<script src="assets/js/swiper/swiper-bundle.min.js" defer></script>
 		<script src="assets/js/scripts.min.js?v=1" defer></script>
+		<div class="modal" id="callme">
+			<div class="modal__wrapper"> 
+				<h3 class="modal__title">заказать<br>звонок</h3>
+				<p class="modal__text">Оставьте заявку и наш специалист перезвонит в ближайшее время для консультации</p>
+				<form class="modal__form" action="">
+					<div class="modal__input"> 
+						<input type="text" name="name" placeholder="Ваше имя"><span class="input-error name-error" style="display:none">Пожалуйста, заполните это поле</span>
+					</div>
+					<div class="modal__input">
+						<input type="text" name="phone" placeholder="+7 (999) 999-99-99"><span class="input-error phone-error" style="display:none">Пожалуйста, заполните это поле</span>
+					</div>
+					<div class="modal__input"> 
+						<input type="email" name="email" placeholder="E-mail">
+					</div>
+					<button class="modal__btn btn" type="submit">Оставить заявку</button>
+					<p>Нажимая кноку «Оставить заявку», вы соглашаетесь с <a href="">политикой конфиденциальности </a></p>
+				</form>
+			</div>
+		</div>
 	</body>
 </html>
