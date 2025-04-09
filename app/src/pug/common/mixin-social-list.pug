@@ -1,0 +1,4 @@
+mixin social(icon, link)
+  a(href=`${link}` target="_blank")
+    svg(width="20" height="20" viewBox="0 0 20 20").icon
+      use(href=`assets/images/sprite.svg#${icon}`)

@@ -1,0 +1,234 @@
+.header{
+  padding-top: 10px;
+  position: relative;
+  &__wrapper{
+    border-radius: 40px;
+    background: var(--colorBlack);
+    padding: 10px;
+    padding-left: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo{
+    height: 40px;
+    width: auto;
+    .logo{
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+  &__nav{
+    ul{
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      line-height: 25px;
+      a{
+        color: var(--colorWhite);
+        transition: color linear var(--transitionDuration);
+      }
+    }
+  }
+  &__btns{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  &__phone{
+    transition: color linear var(--transitionDuration);
+    color: var(--colorWhite);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .icon{
+      transition: fill linear var(--transitionDuration);
+      transition: fill-opacity linear var(--transitionDuration);
+      fill-opacity:0.45;
+    }
+  }
+  &__callme{
+    background: var(--colorGreen);
+    color: var(--colorBlack);
+    transition: background linear var(--transitionDuration);
+    line-height: 25px;
+    font-weight: 600;
+  }
+  &__info{
+    display: none;
+  }
+  &__burger{
+    display: none;
+  }
+  @media(hover:hover){
+    &__nav{
+      ul{
+        a:hover{
+          color: var(--colorGreen);
+
+        }
+      }
+    }
+    &__phone:hover{
+      color: var(--colorGreen);
+      .icon{
+        fill-opacity:1;
+      }
+    }
+    &__callme:hover{
+      background: rgba(187, 225, 26, 1);
+    }
+  }
+  @media(max-width:1400px){
+    &__wrapper{
+      padding: 5px 5px;
+      padding-left: 18px;
+    }
+    &__logo{
+      height: 30px;
+    }
+    &__nav{
+      ul{
+        gap: 15px;
+      }
+    }
+  }
+  @media(max-width:1200px){
+    &__nav{
+      ul{
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    &__phone,
+    &__callme{
+      font-size: 14px;
+      padding: 0 10px;
+      gap: 5px;
+    }
+  }
+  @media(max-width:1000px){
+    padding-top: 5px;
+    &__menu{
+      position: fixed;
+      top: 65px;
+      left: 100%;
+      background: var(--colorBlack);
+      border-radius: 25px;
+      padding: 20px;
+      width: calc(100vw - 10px);
+      height: calc(100dvh - 65px);
+      transition: left linear var(--transitionDuration);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &.active{
+        left: 5px;
+      }
+    }
+    &__nav{
+      ul{
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    &__info{
+      display: flex;
+      flex-direction: column;
+      .phone{
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 40px;
+        color: var(--colorWhite);
+        margin-bottom: 15px;
+      }
+      .address,
+      .email,
+      .time{
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 10px;
+        color: var(--colorWhite);
+      }
+      .callme{
+        color: var(--colorBlack);
+        background: var(--colorGreen);
+        width: 100%;
+        margin-top: 25px;
+        border-radius: 52px;
+      }
+      .social{
+        display: flex;
+        gap: 5px;
+        margin-top: 35px;
+        a{
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border:1px solid rgba(255, 255, 255, 0.15);
+        }
+      }
+    }
+    &__phone,
+    &__callme{
+      display: none;
+    }
+    &__logo{
+      height: 25px;
+    }
+    &__burger{
+      display: block;
+      width: 45px;
+      height: 45px;
+      background: var(--colorGreen);
+      border-radius: 50%;
+      position: relative;
+      &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 2px;
+        background: rgba(10, 10, 13, 1);
+        transform: translate(-50%, -50%);
+        transition: opacity linear var(--transitionDuration);
+      }
+      span{
+        width: 20px;
+        height: 2px;
+        background: rgba(10, 10, 13, 1);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        transition: transform linear var(--transitionDuration);
+        &:first-child{
+          transform: translate(-50%, calc(-50% - 6px));
+        }
+        &:last-child{
+          transform: translate(-50%, calc(50% + 4px));
+        }
+      }
+      &.active{
+        &::after{
+          opacity: 0;
+        }
+        span{
+          &:first-child{
+            transform: translate(-50%,-50%) rotate(45deg);
+          }
+          &:last-child{
+            transform:translate(-50%,-50%) rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}

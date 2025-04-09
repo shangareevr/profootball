@@ -1,0 +1,38 @@
+header.header.wrapper
+  .header__wrapper
+    a(href="./main.html").header__logo
+      img(src="./assets/images/logo.svg", alt="PROFOOTBALL").logo
+    .header__menu 
+      nav.header__nav 
+        ul
+          li
+            a(href="./main.html#rent") Аренда поля
+          li
+            a(href="./academy.html") Детская академия
+          li
+            a(href="./events.html") Мероприятия
+          li
+            a(href="./about.html") О нас
+          li
+            a(href="./contacts.html") Контакты
+      .header__info
+        a(href="tel:+79374966629").phone +7 (937) 496 66 29
+        p.address д. Жилино, ул. Пригородная, 42
+        a(href="mailto:profootball2022@mail.ru").email profootball2022@mail.ru
+        p.time 08:00 - 00:00
+        a(href="#callme" data-fancybox).callme.btn Заказать звонок
+        .social 
+          include mixin-social-list
+          +social('vk', '')
+          +social('whatsapp', '')
+          +social('telegram', '')
+          +social('youtube', '')
+    .header__btns 
+      a(href="tel:+79374966629").header__phone.btn
+        svg(width="16" height="16" viewBox="0 0 16 16").icon
+          use(href=`assets/images/sprite.svg#phone`)
+        | +7 (937) 496 66 29
+      a(href="#callme" data-fancybox).header__callme.btn Заказать звонок
+      button.header__burger 
+        span 
+        span 
