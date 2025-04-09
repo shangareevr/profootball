@@ -1,0 +1,44 @@
+mixin startSlide(image, format)
+  .start__slide 
+    picture 
+      source(srcset=`./assets/images/${image}.webp`, type="image/webp")
+      source(srcset=`./assets/images/${image}.${format}`, type=`image/${format}`)
+      img(src=`./assets/images/${image}.${format}` alt=`` loading="lazy").image
+  
+.start.wrapper
+  .start__wrapper 
+    .start__slider.swiper 
+      .swiper-wrapper
+        .start__slide 
+          picture 
+            source(srcset=`./assets/images/79f28f0e169fd6082fb9f82142ffd4fe.webp`, type="image/webp")
+            source(srcset=`./assets/images/79f28f0e169fd6082fb9f82142ffd4fe.png`, type="image/png")
+            img(src=`./assets/images/79f28f0e169fd6082fb9f82142ffd4fe.png` alt=``).image
+        +startSlide('3c99c55355bf5503a22018e90fc88057', 'png')
+        +startSlide('a48fb10a6adf1996fc8fbd8b634228d7', 'png')
+        +startSlide('3f63540d8bf98c845b00fc2dc3ecb26b', 'jpg')
+    .start__content 
+      h1.page__title PROFOOTBALL —<br>футбольный комплекс
+      .start__items 
+        each item in ['Для тренировок','Для турниров','Для соревнований']
+          span= item
+      .start__bottom 
+        .start__btns 
+          .price.btn от 1000 руб
+          a(href="#callme" data-fancybox).btn.start__btn забронировать 
+        .start__slider-nav 
+          .start__pagination
+          .start__slider-idx 
+            span.start__slider-current 1
+            span /
+            span.start__slider-total 3
+          .slider__arrows 
+            .slider__arrow.start__prev
+              svg(width="10" height="16" viewBox="0 0 10 16").icon 
+                use(href=`assets/images/sprite.svg#arrow-prev`)
+            .slider__arrow.start__next
+              svg(width="10" height="16" viewBox="0 0 10 16").icon 
+                use(href=`assets/images/sprite.svg#arrow-next`)
+
+
+      

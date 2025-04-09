@@ -117,4 +117,33 @@ window.addEventListener("DOMContentLoaded",e=>{
       }).mask(input);
     });
   }
+  const currentStart = document.querySelector('.start__slider-current');
+  const totalStart = document.querySelector('.start__slider-total');
+  var startSlider = new Swiper('.start__slider',{
+    slidesPerView: 1,
+    loop:true,
+    effect:'fade',
+    spaceBetween: 0,
+    slideClass:'start__slide',
+    navigation: false,
+    pagination: {
+      el: '.start__pagination',
+      type: 'bullets',
+      clickable:true
+    },
+    navigation: {
+      nextEl: '.start__next',
+      prevEl: '.start__prev',
+    },
+    on:{
+      init: function(){
+        currentStart.innerText = '1';
+        totalStart.innerText = this.slides.length;
+      },
+      slideChange: function(){
+        currentStart.innerText = this.realIndex + 1;
+      }
+
+    }
+  })
 })
