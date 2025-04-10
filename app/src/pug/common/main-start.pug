@@ -5,7 +5,7 @@ mixin startSlide(image, format)
       source(srcset=`./assets/images/${image}.${format}`, type=`image/${format}`)
       img(src=`./assets/images/${image}.${format}` alt=`` loading="lazy").image
   
-.start.wrapper
+section.start.wrapper
   .start__wrapper 
     .start__slider.swiper 
       .swiper-wrapper

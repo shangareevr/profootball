@@ -119,7 +119,7 @@ window.addEventListener("DOMContentLoaded",e=>{
   }
   const currentStart = document.querySelector('.start__slider-current');
   const totalStart = document.querySelector('.start__slider-total');
-  var startSlider = new Swiper('.start__slider',{
+  let startSlider = new Swiper('.start__slider',{
     slidesPerView: 1,
     loop:true,
     effect:'fade',
@@ -143,7 +143,30 @@ window.addEventListener("DOMContentLoaded",e=>{
       slideChange: function(){
         currentStart.innerText = this.realIndex + 1;
       }
-
+    }
+  })
+  let rentSlider = new Swiper('.rent__slider',{
+    slidesPerView: 'auto',
+    loop:true,
+    
+    spaceBetween: 10,
+    slideClass:'rent__slide',
+    navigation: false,
+    pagination: {
+      el: '.rent__indx',
+      type: 'fraction',
+      clickable:true
+    },
+    navigation: {
+      nextEl: '.rent__next',
+      prevEl: '.rent__prev',
+    },
+    breakpoints:{
+      1200:{
+        slidesPerView: 1,
+        effect:'fade',
+        spaceBetween:0
+      }
     }
   })
 })
