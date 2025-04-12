@@ -65,3 +65,13 @@ body{
     line-height: 35px;
   }
 }
+.section-black{
+  background: var(--colorBlack);
+  border-radius: 40px;
+  margin: 0 auto;
+  width: calc(100% - 60px);
+  max-width: 1920px;
+  @media(max-width:800px){
+    width: calc(100% - 10px);
+  }
+}
