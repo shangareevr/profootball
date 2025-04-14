@@ -169,4 +169,15 @@ window.addEventListener("DOMContentLoaded",e=>{
       }
     }
   })
+  let subscriptionSlider = new Swiper('.subscription__slider',{
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    slideClass:'subscription__slide',
+    navigation: false,
+    breakpoints:{
+      1200:{
+        spaceBetween:20
+      }
+    }
+  })
 })

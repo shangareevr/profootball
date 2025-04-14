@@ -38,3 +38,34 @@ block content
             .academy__btns 
               a(href="#callme" data-fancybox).academy__btn.btn Записаться
               a(href="./academy.html").academy__link.btn узнать подробнее  
+    section.subscription
+      mixin subscriptionSlide(name, count, freez, price, tag)
+        .subscription__slide(class=tag ? 'active' : '')
+          if(tag)
+            .subscription__tag= tag
+          .top 
+            .subscription__name= `"${name}"` 
+            .subscription__info 
+              .item 
+                svg(width="25" height="25" viewBox="0 0 25 25").icon 
+                  use(href=`assets/images/sprite.svg#calendar`)
+                p Тренировки:
+                  span= count
+              .item 
+                svg(width="25" height="25" viewBox="0 0 25 25").icon 
+                  use(href=`assets/images/sprite.svg#freezing`)
+                p заморозка:
+                  span= freez
+          .bottom
+            p.subscription__price= price
+            a(href="#callme" data-fancybox).btn.subscription__link оставить заявку 
+      .subscription__wrapper 
+        .subscription__top 
+          h2.page__title Абонементы
+          p Получите доступ к ежедневным тренировкам, участию в турнирах и специальным мероприятиям. Развивайте свои футбольные навыки и прокладывайте путь к успеху вместе с нами!
+        .subscription__slider.swiper 
+          .swiper-wrapper 
+            +subscriptionSlide("старт", " 2 раза в неделю", "0 дней", "3000 ₽")
+            +subscriptionSlide("стандарт", " 3 раза в неделю", "7 дней", "3900 ₽")
+            +subscriptionSlide("годовой", " безлимитное посещение", "с заморозкой", "42 000 ₽", "хит")
+            +subscriptionSlide("взрослые 18+", "3 раза в неделю", "с заморозкой", "4500 ₽")
