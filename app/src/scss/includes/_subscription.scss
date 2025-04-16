@@ -6,6 +6,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 35px;
     padding-top: 40px;
+    padding-bottom: 80px;
   }
   &__top{
     display: flex;
@@ -103,6 +104,9 @@
     }
   }
   @media(max-width:1200px){
+    &__wrapper{
+      padding-bottom: 25px;
+    }
     &__top{
       flex-direction: column;
       align-items: flex-start;

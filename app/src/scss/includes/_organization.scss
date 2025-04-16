@@ -1,0 +1,223 @@
+.organization{
+  margin: 0 30px;
+  &__wrapper{
+    margin: 0 auto;
+    margin-top: 180px;
+    position: relative;
+    max-width: 1750px;
+    padding: 0 25px;
+  }
+  &__icon{
+    position: absolute;
+    top: 0;
+    left: 25px;
+    width: 25px;
+    height: 25px;
+    &::after{
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 4px;
+      top: 50%;
+      left: 50%;
+      background: var(--colorGreen);
+      transform:translate(-50%, -50%);
+    }
+    &::before{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 4px;
+      height: 100%; 
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--colorGreen);
+    }
+    &-bottom{
+      top: auto;
+      bottom: 0;
+    }
+  }
+  &__slider{
+    position: absolute !important;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 30px;
+  }
+  &__slide{
+    width: 100%;
+    flex-shrink: 0;
+    color: white;
+    position: relative;
+    .image{
+      border-radius: 40px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: 1;
+    }
+  }
+  &__info{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: calc(100% - 20px);
+    background: var(--colorBlack);
+    border-radius: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    padding-left: 35px;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 25px;
+    z-index: 1;
+    color: white;
+  }
+  &__nav{
+    display: flex;
+    gap: 20px;
+    line-height: 60px;
+    text-transform: uppercase;
+    .current{
+      font-size: 42px;
+    }
+  }
+  &__arrow{
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10.300000190734863px);
+    position: relative;
+    z-index: 4;
+    transition: all linear var(--transitionDuration);
+  }
+  &__content{
+    width: calc(50% - 100px);
+    padding: 30px 0 45px 100px;
+    max-width: 736px;
+  }
+  &__text{
+    margin-top: 40px;
+    font-weight: 400;
+    line-height: 25px;
+  }
+  &__btns{
+    margin-top: 100px;
+    display: flex;
+    gap: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 25px;
+  }
+  &__btn{
+    background: var(--colorGreen);
+    color: var(--colorBlack);
+    transition: background linear var(--transitionDuration);
+  }
+  &__link{
+    border: 1px solid var(--colorGreen);
+    color: var(--colorGreen);
+    padding: 0 30px;
+    font-weight: 700;
+    transition: all linear var(--transitionDuration);
+  }
+  @media(hover:hover){
+    &__btn:hover{
+      background: rgba(187, 225, 26, 1);
+    }
+    &__link{
+      &:hover{
+        background: rgba(214, 255, 44, .15);
+        border-color: rgba(214, 255, 44, .15);
+      }
+    }
+    &__arrow:hover{
+      background: var(--colorGreen);
+      color: var(--colorBlack);
+    }
+  }
+  @media(max-width:1500px){
+    &__wrapper{
+      margin-top: 80px;
+    }
+    &__slider{
+      margin-top: 35px;
+      position: relative !important;
+      width: 100%;
+      right: 0;
+    }
+    &__content{
+      width: 100%;
+      max-width: 100%;
+    }
+    &__slide{
+      width: 84.2vw !important;
+      max-width: 600px;
+      .image{
+        border-radius: 25px;
+      }
+    }
+    &__nav{
+      display: none;
+    }
+    &__info{
+      padding: 13px;
+      justify-content: center;
+      line-height: 20px;
+      font-size: 1rem;
+      left: 5px;
+      bottom: 5px;
+      width: calc(100% - 10px);
+    }
+  }
+  @media(max-width:1000px){
+    margin: 0 15px;
+    &__wrapper{
+      padding: 0;
+    }
+    &__content{
+      padding: 0;
+    }
+    &__icon{
+      width: 20px;
+      height: 20px;
+      &-bottom{
+        display: none;
+      }
+      &-top{
+        left: auto;
+        right: 0px;
+        top: 0;
+      }
+    }
+    .page__title{
+      width: calc(100% - 40px);
+    }
+    &__slider{
+      width: calc(100% + 15px);
+    }
+    &__slide{
+      height: auto;
+      aspect-ratio: 4 /3;
+    }
+    &__btns{
+      margin-top: 35px;
+    }
+    &__text{
+      margin-top: 15px;
+      line-height: 20px;
+    }
+    &__btns{
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}

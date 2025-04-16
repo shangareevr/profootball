@@ -180,4 +180,44 @@ window.addEventListener("DOMContentLoaded",e=>{
       }
     }
   })
+  const organizationSliderNextBtns = document.querySelectorAll('.organization__next');
+  const organizationSliderPrevBtns = document.querySelectorAll('.organization__prev');
+  const organizationSlideIndex = document.querySelectorAll('.organization__total .current');
+  const organizationSlideTotal = document.querySelectorAll('.organization__total .total');
+  let organizationSlider = new Swiper('.organization__slider',{
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    slideClass:'organization__slide',
+    breakpoints:{
+      1500:{
+        slidesPerView: 1,
+        spaceBetween:20
+      },
+      navigation: false
+    }
+  })
+  if(organizationSlideIndex){
+    organizationSlideIndex.forEach((item, index)=>{
+      item.innerText = index + 1;
+    })
+  }
+  if(organizationSlideTotal){
+    organizationSlideTotal.forEach((item)=>{
+      item.innerText = organizationSlideTotal.length;
+    })
+  }
+  if(organizationSliderNextBtns){
+    organizationSliderNextBtns.forEach(next=>{
+      next.addEventListener('click',e=>{
+        organizationSlider.slideNext();
+      })
+    })
+  }
+  if(organizationSliderPrevBtns){
+    organizationSliderPrevBtns.forEach(next=>{
+      next.addEventListener('click',e=>{
+        organizationSlider.slidePrev();
+      })
+    })
+  }
 })

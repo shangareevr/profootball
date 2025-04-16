@@ -69,3 +69,37 @@ block content
             +subscriptionSlide("стандарт", " 3 раза в неделю", "7 дней", "3900 ₽")
             +subscriptionSlide("годовой", " безлимитное посещение", "с заморозкой", "42 000 ₽", "хит")
             +subscriptionSlide("взрослые 18+", "3 раза в неделю", "с заморозкой", "4500 ₽")
+  section.organization
+    mixin organizationSlide(image, text)
+      .organization__slide 
+        picture 
+            source(srcset=`./assets/images/${image}.webp`, type="image/webp")
+            source(srcset=`./assets/images/7${image}.png`, type="image/png")
+            img(src=`./assets/images/${image}.png` alt=``).image
+        .organization__info 
+          p= text 
+          .organization__nav 
+            .organization__total 
+              span.current 1
+              span /
+              span.total 1
+            .slider__arrows 
+              .slider__arrow.organization__prev.organization__arrow
+                svg(width="10" height="16" viewBox="0 0 10 16").icon 
+                  use(href=`assets/images/sprite.svg#arrow-prev`)
+              .slider__arrow.organization__next.organization__arrow
+                svg(width="10" height="16" viewBox="0 0 10 16").icon 
+                  use(href=`assets/images/sprite.svg#arrow-next`)
+    .organization__wrapper.wrapper
+      .organization__icon.organization__icon-top
+      .organization__icon.organization__icon-bottom
+      .organization__content
+        h2.page__title Организация cпортивных мероприятий под ключ
+        p.organization__text С другой стороны сложившаяся структура организации представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям представляет собой интересный эксперимент проверки системы обучения кадров.
+        .organization__slider.swiper 
+          .swiper-wrapper
+            +organizationSlide('a8f1802a9c70deb2013d81f4818e04ac','Спортивные корпоративы')
+            +organizationSlide('699cff431b0240e3cf12ce21c6884dc0','Спортивные корпоративы')
+        .organization__btns
+          a(href="#callme" data-fancybox).organization__btn.btn обсудить детали
+          a(href="./organization.html").organization__link.btn   подробнее
